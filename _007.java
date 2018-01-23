@@ -6,6 +6,7 @@ Notes:
 3. convert arraylist to array: Integer[] array = list.toArray(new Integer[list.size()]);
 4. range of 32-bit int: [-2147483648, 2147483647].
 */
+
 class Solution {
     public int reverse(int x) {
         if(x >= 0){
@@ -34,6 +35,7 @@ class Solution {
     }
 }
 
+
 /**
  Solution Two: Math
  Notes:
@@ -41,6 +43,7 @@ class Solution {
  2. overflow: Integer.MIN_VALUE, Integer.MAX_VALUE;
  3. type casting: (int)res.
  */
+
 class Solution {
     public int reverse(int x) {
         long res = 0;
