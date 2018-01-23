@@ -35,3 +35,21 @@ class Solution {
         }
     }
 }
+
+
+/**
+ Solution Two: Math
+ Notes:
+ 1. algorithm: res = res * 10 + x / 10;
+ 2. overflow: Integer.MIN_VALUE, Integer.MAX_VALUE;
+ 3. type casting: (int)res.
+ */
+class Solution {
+    public int reverse(int x) {
+        long res = 0;
+        for( ; x != 0; x /= 10){
+            res = res * 10 + x % 10;
+        }
+        return res < Integer.MIN_VALUE || res > Integer.MAX_VALUE ? 0 : (int)res ;
+    }
+}
