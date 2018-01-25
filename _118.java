@@ -1,5 +1,5 @@
 /**
- SOLUTION: math
+ SOLUTION: arraylist, math
  */
 
 class Solution {
