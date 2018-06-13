@@ -1,5 +1,41 @@
+/**
+方法一：双指针
+多用于有序数组
+*/
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] indexes = new int[2];
+        int[] originNums = new int[nums.length];
+        for(int i = 0; i < nums.length; i++){
+            originNums[i] = nums[i];
+        }//复制数组
+            
+        Arrays.sort(nums);//排序
+        
+        int front = 0;
+        int tail = nums.length - 1;
+        while (front < tail){//数组头尾各设置一个指针，根据比较结果移动指针
+            if(nums[front] + nums[tail] > target) tail--;
+            if(nums[front] + nums[tail] < target) front++;
+            if(nums[front] + nums[tail] == target) {
+                break;
+            }
+        }
+        
+        int number = 0;
+        for(int i = 0; i < originNums.length; i++){//根据选出的数值找到它们在原始数组的index
+            if(nums[front] == originNums[i] || nums[tail] == originNums[i]){
+                indexes[number] = i;
+                number++;
+            }
+        }  
+        return indexes;
+    }
+}
+
 /** 
-SOLUTION: HashMap 
+方法二: HashMap 
 NOTES:
 1. create HashMap: Map<Integer, Integer> mapName = new HashMap<>();
 2. containsKey(K) returns true if K is one of the keys in HashMap;
