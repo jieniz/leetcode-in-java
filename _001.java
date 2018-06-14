@@ -1,6 +1,6 @@
 /**
 方法一：双指针
-多用于有序数组
+多用于有序数组，无序数组先排序
 */
 
 class Solution {
@@ -34,8 +34,10 @@ class Solution {
     }
 }
 
+
 /** 
-方法二: HashMap 
+方法二: HashMap
+HashMap存储键值对，利用数据结构把数组的值作为key，把index作为value.
 NOTES:
 1. create HashMap: Map<Integer, Integer> mapName = new HashMap<>();
 2. containsKey(K) returns true if K is one of the keys in HashMap;
