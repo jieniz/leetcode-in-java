@@ -6,6 +6,8 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int[] indexes = new int[2];
+        if(nums == null || nums.length < 2) return indexes;
+        
         int[] originNums = new int[nums.length];
         for(int i = 0; i < nums.length; i++){
             originNums[i] = nums[i];
@@ -15,6 +17,8 @@ class Solution {
         
         int front = 0;
         int tail = nums.length - 1;
+        
+        if(nums[front] * 2 > target || nums[tail] * 2 < target) return indexes;//排除过大或过小
         while (front < tail){//数组头尾各设置一个指针，根据比较结果移动指针
             if(nums[front] + nums[tail] > target) tail--;
             if(nums[front] + nums[tail] < target) front++;
