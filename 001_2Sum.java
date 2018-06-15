@@ -18,9 +18,7 @@ class Solution {
         while (front < tail){//数组头尾各设置一个指针，根据比较结果移动指针
             if(nums[front] + nums[tail] > target) tail--;
             if(nums[front] + nums[tail] < target) front++;
-            if(nums[front] + nums[tail] == target) {
-                break;
-            }
+            if(nums[front] + nums[tail] == target) break;
         }
         
         int number = 0;
